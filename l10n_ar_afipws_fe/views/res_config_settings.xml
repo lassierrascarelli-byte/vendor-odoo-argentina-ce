@@ -6,13 +6,13 @@
             <field eval="40" name="priority"/>
             <field name="inherit_id" ref="l10n_ar_afipws.res_config_settings_view_form"/>
             <field name="arch" type="xml">
-                <field name="afip_ws_env_type" position="after">
-                    <label for="l10n_ar_afip_fce_transmission"/>
-                    <field class="font-weight-bold" name="l10n_ar_afip_fce_transmission"/>
-                    <label for="l10n_ar_payment_foreign_currency"/>
-                    <field class="font-weight-bold" name="l10n_ar_payment_foreign_currency"/>
-                </field>
-
-            </field>
+                <xpath expr="//setting[@id='afip_ws_environment_setting']" position="after">
+                    <setting id="l10n_ar_afip_fce_transmission_setting" help="FCE: Opción de Transmisión">
+                        <field name="l10n_ar_afip_fce_transmission"/>
+                    </setting>
+                    <setting id="l10n_ar_payment_foreign_currency_setting" help="Default Policy for Payment in Foreign Currency">
+                        <field name="l10n_ar_payment_foreign_currency"/>
+                    </setting>
+                </xpath>            </field>
         </record>
 </odoo>

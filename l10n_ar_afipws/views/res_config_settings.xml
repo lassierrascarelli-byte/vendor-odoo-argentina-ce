@@ -6,13 +6,19 @@
             <field eval="40" name="priority"/>
             <field name="inherit_id" ref="account.res_config_settings_view_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//block[@id='invoicing_settings']" position="inside">
-                    <setting type="header" string="AFIP WS" help="Configure AFIP web services">
-                        <button class="btn-link" icon="fa-arrow-right" name="%(l10n_ar_afipws.act_afipws_certificate_alias)d" string="List certificates" type="action"/>
-                        <button class="btn-link" icon="fa-arrow-right" name="%(l10n_ar_afipws.act_afipws_auth)d" string="List conections" type="action"/>
-                        <label for="afip_ws_env_type"/>
-                        <field class="font-weight-bold" name="afip_ws_env_type"/>
-                    </setting>
+                <xpath expr="//block[@id='invoicing_settings']" position="after">
+                    <block title="AFIP WS" id="afip_ws_settings">
+                        <setting id="afip_ws_certificates" string="Certificates &amp; Connections" help="Manage AFIP certificates and active connections">
+                            <div class="content-group">
+                                <button class="btn-link" icon="oi-arrow-right" name="%(l10n_ar_afipws.act_afipws_certificate_alias)d" string="List certificates" type="action"/>
+                                <br/>
+                                <button class="btn-link" icon="oi-arrow-right" name="%(l10n_ar_afipws.act_afipws_auth)d" string="List conections" type="action"/>
+                            </div>
+                        </setting>
+                        <setting id="afip_ws_environment_setting" string="Environment" help="AFIP enviroment type">
+                            <field name="afip_ws_env_type"/>
+                        </setting>
+                    </block>
                 </xpath>
             </field>
         </record>

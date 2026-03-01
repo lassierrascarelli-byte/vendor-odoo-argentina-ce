@@ -11,7 +11,7 @@
                     <field name="mipyme_from_amount" invisible="not mipyme_required"/>
                     <button name="l10n_ar_afipws_fe_min_ammount" string="Check mi Pyme status" type="object"/>
                 </group>
-            </group>
+            </page>
         </field>
     </record>
     <record id="view_partner_form" model="ir.ui.view">

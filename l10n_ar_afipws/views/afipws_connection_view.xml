@@ -7,16 +7,28 @@
             <form string="AFIP Connector">
                 <sheet string="AFIP Servers">
                     <group>
-                        <field name="afip_ws"/>
-                        <field name="type"/>
-                        <field name="uniqueid"/>
-                        <field name="generationtime"/>
-                        <field name="expirationtime"/>
-                        <field name="sign"/>
-                        <field name="token"/>
-                        <field name="afip_login_url"/>
-                        <field name="afip_ws_url"/>
-                        <field name="company_id"/>
+                        <group string="Credenciales">
+                            <field name="company_id"/>
+                            <field name="afip_ws"/>
+                            <field name="type"/>
+                            <field name="uniqueid"/>
+                            <field name="afip_login_url"/>
+                            <field name="afip_ws_url"/>
+                        </group>
+                        <group string="Estado">
+                            <label for="generationtime" string="Fecha Desde / Hasta"/>
+                            <div class="o_row">
+                                <field name="generationtime"/>
+                                <span class="mx-2">-</span>
+                                <field name="expirationtime"/>
+                            </div>
+                            <label for="token" string="Token / Sign"/>
+                            <div class="o_row">
+                                <field name="token"/>
+                                <span class="mx-2">-</span>
+                                <field name="sign"/>
+                            </div>
+                        </group>
                     </group>
                 </sheet>
             </form>
